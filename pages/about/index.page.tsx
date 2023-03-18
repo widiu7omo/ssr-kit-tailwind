@@ -1,8 +1,8 @@
-import React from 'react'
-import './code.css'
+import React from "react";
+import "./code.css";
 
-export { Page }
-
+export { Page };
+export { AdminLayout as Layout } from "../../core/layouts/AdminLayout";
 function Page() {
   return (
     <>
@@ -11,5 +11,5 @@ function Page() {
         Example of using <code>vite-plugin-ssr</code>.
       </p>
     </>
-  )
+  );
 }

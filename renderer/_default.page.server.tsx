@@ -26,7 +26,7 @@ async function render(pageContext: PageContextServer) {
     "App using Vite + vite-plugin-ssr";
 
   const documentHtml = escapeInject`<!DOCTYPE html>
-    <html lang="en">
+    <html lang="en" class="h-full bg-gray-50">
       <head>
         <meta charset="UTF-8" />
         <link rel="icon" href="${logoUrl}" />
@@ -34,7 +34,7 @@ async function render(pageContext: PageContextServer) {
         <meta name="description" content="${desc}" />
         <title>${title}</title>
       </head>
-      <body>
+      <body class="h-full scroll-smooth">
         <div id="page-view">${stream}</div>
       </body>
     </html>`;

@@ -9,7 +9,7 @@ import type { PageContextBuiltInClient } from "vite-plugin-ssr/client/router"; /
 
 type Page = (pageProps: PageProps) => React.ReactElement;
 type PageProps = {};
-
+type LayoutProps = {};
 export type PageContextCustom = {
   Page: Page;
   pageProps?: PageProps;
@@ -19,6 +19,7 @@ export type PageContextCustom = {
       title?: string;
       description?: string;
     };
+    Layout?: (props: LayoutProps) => React.ReactElement;
   };
 };
 
