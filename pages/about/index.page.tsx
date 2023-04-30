@@ -1,7 +1,7 @@
 import React from "react";
 
 export { Page };
-export { AdminLayout as Layout } from "../../core/layouts/AdminLayout";
+export { AdminLayout as Layout } from "#app/core/layouts/AdminLayout";
 function Page() {
   return (
     <>

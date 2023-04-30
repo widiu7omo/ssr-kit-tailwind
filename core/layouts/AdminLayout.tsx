@@ -174,7 +174,7 @@ function AdminLayout({ children }: { children: JSX.Element }) {
               <span className="sr-only">Open sidebar</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
-            <div className="flex-1 flex justify-between px-4 md:px-0">
+            <div className="flex-1 flex justify-between max-w-4xl mx-auto px-4 md:px-0">
               <div className="flex-1 flex">
                 <form className="w-full flex md:ml-0" action="#" method="GET">
                   <label htmlFor="search-field" className="sr-only">
@@ -250,7 +250,7 @@ function AdminLayout({ children }: { children: JSX.Element }) {
             </div>
           </div>
 
-          <main className="flex-1 max-w-4xl">
+          <main className="flex-1 w-full max-w-4xl mx-auto">
             <div className="py-6">{children}</div>
           </main>
         </div>

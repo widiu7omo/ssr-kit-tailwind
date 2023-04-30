@@ -1,8 +1,8 @@
-import React from 'react'
-import { Counter } from './Counter'
+import React from "react";
+import { Counter } from "./Counter";
 
-export { Page }
-
+export { Page };
+export { AdminLayout as Layout } from "#app/core/layouts/AdminLayout";
 function Page() {
   return (
     <>
@@ -15,5 +15,5 @@ function Page() {
         </li>
       </ul>
     </>
-  )
+  );
 }
