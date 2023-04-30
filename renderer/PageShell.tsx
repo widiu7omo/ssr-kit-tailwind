@@ -31,15 +31,7 @@ function Layout({ children }: { children: JSX.Element }) {
 
 function Content({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      id="page-container"
-      style={{
-        padding: 20,
-        paddingBottom: 50,
-        borderLeft: "2px solid #eee",
-        minHeight: "100vh",
-      }}
-    >
+    <div id="page-container">
       <div
         id="page-content"
         style={{

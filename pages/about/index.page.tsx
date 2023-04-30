@@ -1,5 +1,4 @@
 import React from "react";
-import "./code.css";
 
 export { Page };
 export { AdminLayout as Layout } from "../../core/layouts/AdminLayout";
