@@ -6,13 +6,16 @@ import {
   Bars3Icon,
   UsersIcon,
   XMarkIcon,
+  StarIcon,
 } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import { usePageContext } from "#app/renderer/usePageContext";
 
 const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
+  { name: "Dashboard", href: "/", icon: HomeIcon, current: false },
+  { name: "About", href: "/about", icon: UsersIcon, current: false },
+  { name: "Fetch Example", href: "/star-wars", icon: StarIcon, current: false },
 ];
 const userNavigation = [
   { name: "Your Profile", href: "#" },
@@ -27,7 +30,7 @@ function classNames(...classes: string[]) {
 export { AdminLayout };
 function AdminLayout({ children }: { children: JSX.Element }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
+  const { urlOriginal } = usePageContext();
   return (
     <>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -135,29 +138,31 @@ function AdminLayout({ children }: { children: JSX.Element }) {
           </div>
           <div className="flex-grow mt-5 flex flex-col">
             <nav className="flex-1 px-2 pb-4 space-y-1">
-              {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-100 text-gray-900"
-                      : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-                    "group rounded-md py-2 px-2 flex items-center text-sm font-medium"
-                  )}
-                >
-                  <item.icon
+              {navigation.map((item) => {
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
                     className={classNames(
-                      item.current
-                        ? "text-gray-500"
-                        : "text-gray-400 group-hover:text-gray-500",
-                      "mr-3 flex-shrink-0 h-6 w-6"
+                      urlOriginal.includes(item.href)
+                        ? "bg-gray-100 text-gray-900"
+                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
+                      "group rounded-md py-2 px-2 flex items-center text-sm font-medium"
                     )}
-                    aria-hidden="true"
-                  />
-                  {item.name}
-                </a>
-              ))}
+                  >
+                    <item.icon
+                      className={classNames(
+                        urlOriginal.includes(item.href)
+                          ? "text-gray-500"
+                          : "text-gray-400 group-hover:text-gray-500",
+                        "mr-3 flex-shrink-0 h-6 w-6"
+                      )}
+                      aria-hidden="true"
+                    />
+                    {item.name}
+                  </a>
+                );
+              })}
             </nav>
           </div>
         </div>
