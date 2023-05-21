@@ -15,7 +15,7 @@ async function render(pageContext: PageContextServer) {
     <PageShell pageContext={pageContext}>
       <Page {...pageProps} />
     </PageShell>,
-    { disable: true }
+    { disable: false }
   );
 
   // See https://vite-plugin-ssr.com/head

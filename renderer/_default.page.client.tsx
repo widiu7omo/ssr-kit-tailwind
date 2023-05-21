@@ -5,7 +5,7 @@ export { onPageTransitionEnd };
 export const clientRouting = true;
 export const hydrationCanBeAborted = true;
 
-import "./css/index.css";
+import "./css/global.css";
 import React from "react";
 import ReactDOMClient from "react-dom/client";
 import { getPageTitle } from "./getPageTitle";

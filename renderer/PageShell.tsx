@@ -32,14 +32,7 @@ function Layout({ children }: { children: JSX.Element }) {
 function Content({ children }: { children: React.ReactNode }) {
   return (
     <div id="page-container">
-      <div
-        id="page-content"
-        style={{
-          padding: 20,
-          paddingBottom: 50,
-          minHeight: "100vh",
-        }}
-      >
+      <div id="page-content" className="p-[20px] pb-[50px] min-h-scren">
         {children}
       </div>
     </div>
